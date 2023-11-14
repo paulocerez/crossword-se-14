@@ -1,8 +1,11 @@
+
+# class representing a variable in the crossword
 class Variable():
 
     ACROSS = "across"
     DOWN = "down"
 
+	# row i, column j, direction ACROSS/DOWN, length as the constraints for each variable
     def __init__(self, i, j, direction, length):
         """Create a new variable with starting point, direction, and length."""
         self.i = i
@@ -35,16 +38,25 @@ class Variable():
         return f"Variable({self.i}, {self.j}, {direction}, {self.length})"
 
 
-class Crossword():
+# class representing the crossword puzzle
 
+class Crossword():
+    
+
+	# requires structure_file -> defining structure of the puzzle, words_file -> list of words as possible variables
     def __init__(self, structure_file, words_file):
 
         # Determine structure of crossword
         with open(structure_file) as f:
             contents = f.read().splitlines()
+
+			# crossword height
             self.height = len(contents)
+            # crossword width
             self.width = max(len(line) for line in contents)
 
+			# 2D list representing puzzle structure (determining whether a cell is blank or blocked)
+			# For any valid row i and column j, crossword.structure[i][j] will be True if the cell is blank (a character must be filled there) and will be False otherwise (no character is to be filled in that cell)
             self.structure = []
             for i in range(self.height):
                 row = []
@@ -57,11 +69,11 @@ class Crossword():
                         row.append(False)
                 self.structure.append(row)
 
-        # Save vocabulary list
+        # Save vocabulary list -> set of all of the words to draw from when constructing the crossword puzzle
         with open(words_file) as f:
             self.words = set(f.read().upper().splitlines())
 
-        # Determine variable set
+        # Determine variable set -> set of all variables
         self.variables = set()
         for i in range(self.height):
             for j in range(self.width):
