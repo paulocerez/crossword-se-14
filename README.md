@@ -1,8 +1,12 @@
 # CS50 - Introduction to AI - Project: Crossword
 
-## Task: Write an AI to generate crossword puzzles
+## Task: Write an AI to generate crossword puzzles (constraint satisfaction problem)
 
-### $ python generate.py data/structure1.txt data/words1.txt output.png
+#### Command to run the program after cloning the repo: python generate.py data/structure1.txt data/words1.txt (optional: output.png)
+
+Project description:
+
+## My personal notes:
 
 -> constraint satisfaction problem
 
