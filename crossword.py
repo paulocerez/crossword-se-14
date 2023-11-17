@@ -1,4 +1,6 @@
 
+
+
 # class representing a variable in the crossword
 class Variable():
 
