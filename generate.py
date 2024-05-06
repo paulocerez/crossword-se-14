@@ -1,16 +1,9 @@
 
 # GOAL: Generate a program that automatically generates crossword puzzles that fulfill the constraint satisfaction problem
-
-
 import sys
-from crossword import *
-from functions.utils import CrosswordCreator
+from functions.crossword_creator import CrosswordCreator
 
 from crossword import *
-
-
-
-
 
 def main():
 
@@ -32,9 +25,9 @@ def main():
 	if assignment is None:
 		print("No solution.")
 	else:
-		creator.print(assignment)
+		creator.print_crossword(assignment)
 		if output:
-			creator.save(assignment, output)
+			creator.save_crossword(assignment, output)
 
 
 if __name__ == "__main__":

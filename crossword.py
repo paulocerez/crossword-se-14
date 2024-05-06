@@ -1,9 +1,9 @@
-
-
+# This file defines the two classes crossword and variables
 
 # class representing a variable in the crossword
 class Variable():
 
+	# constants
     ACROSS = "across"
     DOWN = "down"
 
@@ -41,9 +41,7 @@ class Variable():
 
 
 # class representing the crossword puzzle
-
 class Crossword():
-    
 
 	# requires structure_file -> defining structure of the puzzle, words_file -> list of words as possible variables
     def __init__(self, structure_file, words_file):
