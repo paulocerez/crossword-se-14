@@ -1,5 +1,6 @@
 # helper functions
 from crossword import Variable
+from PIL import Image, ImageDraw, ImageFont
 
 def print_crossword(assignment, crossword):
 	"""
@@ -19,7 +20,6 @@ def save_crossword(assignment, filename, crossword):
 		"""
 		Save crossword assignment to an image file.
 		"""
-		from PIL import Image, ImageDraw, ImageFont
 		cell_size = 100
 		cell_border = 2
 		interior_size = cell_size - 2 * cell_border
